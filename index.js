@@ -31,10 +31,9 @@
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
 
 
-  let sceneListUI = document.querySelector('#sceneList');
   let sceneContainer = document.createElement('ul');
   sceneContainer.classList.add('scenes');
-  sceneContainer.appendChild(sceneListUI);
+  sceneContainer.appendChild(sceneListElement);
 
   for (i=0; i<data.scenes.length; i++){
     let sceneLinkHref = document.createElement('a');
@@ -190,7 +189,20 @@
     showSceneList();
   }
 
+  scenes.forEach(function(scene) {
+    var el = document.querySelector('#sceneList');
+    console.log(el);
+    el.addEventListener('click', function() {
+      switchScene(scene);
+      // On mobile, hide scene list after selecting a scene.
+      if (document.body.classList.contains('mobile')) {
+        hideSceneList();
+      }
+    console.log(el)
+    })
+  });
   // Set handler for scene switch.
+  
   /*
   scenes.forEach(function(scene) {
     var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
