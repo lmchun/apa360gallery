@@ -30,6 +30,25 @@
   var autorotateToggleElement = document.querySelector('#autorotateToggle');
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
 
+
+  let sceneListUI = document.querySelector('#sceneList');
+  let sceneContainer = document.createElement('ul');
+  sceneContainer.classList.add('scenes');
+  sceneContainer.appendChild(sceneListUI);
+
+  for (i=0; i<data.scenes.length; i++){
+    let sceneLinkHref = document.createElement('a');
+    let sceneId = data.scenes[i].id
+    let sceneName = data.scenes[i].name
+    let sceneLi  = document.createElement('li');
+
+    sceneLinkHref.classList.add('scene')
+    sceneLinkHref.setAttribute("data-id", sceneId)
+    sceneLi.classList.add("text")
+    sceneLi.innerHTML = `${sceneName}`
+  }
+
+
   // Detect desktop or mobile mode.
   if (window.matchMedia) {
     var setMode = function() {
@@ -103,22 +122,22 @@
     });
 
     // Create info hotspots.
-    data.infoHotspots.forEach(function(hotspot) {
-      var element = createInfoHotspotElement(hotspot);
-      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
-    });
+    // data.infoHotspots.forEach(function(hotspot) {
+    //   var element = createInfoHotspotElement(hotspot);
+    //   scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
+    // });
     
     //create iframe hotspots, grab each element for each element get this property
-    for(i=0; i<data.length; i++){
-    // data.forEach(function(hotspot){
-      console.log(data.scenes[i]);
-      //for each item in array if there is an iFrame Spot, then call the function
-      if(data.iframespot != null ){
-      var element = createiFrameSpotElement(hotspot);
-      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
-      }
-      // });
-    }
+    // for(i=0; i<data.length; i++){
+    // // data.forEach(function(hotspot){
+    //   console.log(data.scenes[i]);
+    //   //for each item in array if there is an iFrame Spot, then call the function
+    //   if(data.iframespot != null ){
+    //   var element = createiFrameSpotElement(hotspot);
+    //   scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
+    //   }
+    //   // });
+    // }
     
     //   //create iframeselect hotspots.
     //   data.iframeselect.forEach(function(hotspot){
@@ -172,6 +191,7 @@
   }
 
   // Set handler for scene switch.
+  /*
   scenes.forEach(function(scene) {
     var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
     el.addEventListener('click', function() {
@@ -182,7 +202,7 @@
       }
     });
   });
-
+*/
   // DOM elements for view controls.
   var viewUpElement = document.querySelector('#viewUp');
   var viewDownElement = document.querySelector('#viewDown');
@@ -588,3 +608,8 @@ function addClickEvent(element) {
 
 
 container.createHotspot(document.querySelector("#tooltip"), { yaw: 4.55, pitch: 0.102});
+//////////////////////////////////////////////////////////////////
+
+
+
+
