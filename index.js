@@ -192,6 +192,7 @@
   scenes.forEach(function(scene) {
     var el = document.querySelector('#sceneList');
     console.log(el);
+    /*
     el.addEventListener('click', function() {
       switchScene(scene);
       // On mobile, hide scene list after selecting a scene.
@@ -200,6 +201,7 @@
       }
     console.log(el)
     })
+    */
   });
   // Set handler for scene switch.
   
