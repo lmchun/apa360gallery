@@ -72,8 +72,27 @@
 <script src="vendor/screenfull.min.js" ></script>
 <script src="vendor/bowser.min.js" ></script>
 <script src="vendor/marzipano.js" ></script>
-
 <script src="data.js"></script>
+
+<script>
+  let data = window.APP_DATA;
+  let scenelistcontainer = document.querySelector('#sceneList')
+   let sceneContainer = document.createElement('ul');
+  sceneContainer.classList.add('scenes');
+  sceneContainer.appendChild(scenelistcontainer);
+
+  for (i=0; i<data.scenes.length; i++){
+    let sceneLinkHref = document.createElement('a');
+    let sceneId = data.scenes[i].id
+    let sceneName = data.scenes[i].name
+    let sceneLi  = document.createElement('li');
+
+    sceneLinkHref.classList.add('scene')
+    sceneLinkHref.setAttribute("data-id", sceneId)
+    sceneLi.classList.add("text")
+    sceneLi.innerHTML = `${sceneName}`
+  }
+</script>
 <script src="index.js"></script>
 
 </body>

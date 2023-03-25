@@ -30,22 +30,21 @@
   var autorotateToggleElement = document.querySelector('#autorotateToggle');
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
 
+  // let sceneContainer = document.createElement('ul');
+  // sceneContainer.classList.add('scenes');
+  // sceneContainer.appendChild(sceneListElement);
 
-  let sceneContainer = document.createElement('ul');
-  sceneContainer.classList.add('scenes');
-  sceneContainer.appendChild(sceneListElement);
+  // for (i=0; i<data.scenes.length; i++){
+  //   let sceneLinkHref = document.createElement('a');
+  //   let sceneId = data.scenes[i].id
+  //   let sceneName = data.scenes[i].name
+  //   let sceneLi  = document.createElement('li');
 
-  for (i=0; i<data.scenes.length; i++){
-    let sceneLinkHref = document.createElement('a');
-    let sceneId = data.scenes[i].id
-    let sceneName = data.scenes[i].name
-    let sceneLi  = document.createElement('li');
-
-    sceneLinkHref.classList.add('scene')
-    sceneLinkHref.setAttribute("data-id", sceneId)
-    sceneLi.classList.add("text")
-    sceneLi.innerHTML = `${sceneName}`
-  }
+  //   sceneLinkHref.classList.add('scene')
+  //   sceneLinkHref.setAttribute("data-id", sceneId)
+  //   sceneLi.classList.add("text")
+  //   sceneLi.innerHTML = `${sceneName}`
+  // }
 
 
   // Detect desktop or mobile mode.
@@ -189,9 +188,12 @@
     showSceneList();
   }
 
-  scenes.forEach(function(scene) {
-    var el = document.querySelector('#sceneList');
-    console.log(el);
+  document.addEventListener("DOMContentLoaded", function() {
+  //   scenes.forEach(function(scene) {
+  //     var el = document.querySelector('#sceneList');
+  //     console.log(el);
+  //   // rest of the code that uses sceneList
+  // });
     /*
     el.addEventListener('click', function() {
       switchScene(scene);
