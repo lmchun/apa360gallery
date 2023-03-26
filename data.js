@@ -73,6 +73,9 @@ var APP_DATA = {
           "title": "Title",
           "text": "Text"
         }
+      ],
+      "videoHotspots":[
+
       ]
     },
     {
@@ -136,6 +139,9 @@ var APP_DATA = {
           "title": "Title",
           "text": "Text"
         }
+      ],
+      "videoHotspots":[
+        
       ]
     },
     {
@@ -199,6 +205,9 @@ var APP_DATA = {
           "title": "<span id=\"docs-internal-guid-d71d8bba-7fff-e96c-c81d-9aa3cb90d608\"><span style=\"font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">Kathy Liang --artwork</span></span>",
           "text": "Text"
         }
+      ],
+      "videoHotspots":[
+       { "yaw": -216}
       ]
     },
     {
@@ -250,6 +259,9 @@ var APP_DATA = {
           "title": "Title",
           "text": "Text"
         }
+      ],
+      "videoHotspots":[
+       { "yaw": -2.662238064569216}
       ]
     },
     {
@@ -313,6 +325,20 @@ var APP_DATA = {
           "title": "Title",
           "text": "Text"
         }
+      ],
+      "videoHotspots":[
+        {
+          "yaw": 2.813297794778518,
+          "pitch": -0.009056237791217114,
+          "title": "AFUCKal",
+          "text": ["lots of text"]
+        },
+        {
+          "yaw": 2,
+          "pitch": -0,
+          "title": "SOME RANDOM TITLE",
+          "text": ["lots of text"]
+        }
       ]
     },
     {
@@ -358,6 +384,9 @@ var APP_DATA = {
           "title": "Title",
           "text": "Text"
         }
+      ],
+      "videoHotspots":[
+       { "yaw": -2.662238064569216}
       ]
     }
   ],

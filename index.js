@@ -100,6 +100,19 @@
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
     });
 
+    // Create video hotspots.
+  //console.log(data.videoHotspots);
+  for (let i=0; i < data.videoHotspots.length; i++){
+    let videoHotspot = data.videoHotspots[i];
+    if (videoHotspot.yaw){
+      console.log(videoHotspot)
+      var element = createVideoHotspotElement(videoHotspot)
+      console.log(element)
+      scene.hotspotContainer().createHotspot(element, { yaw: videoHotspot.yaw, pitch: videoHotspot.pitch });
+    }
+  };
+
+
     return {
       data: data,
       scene: scene,
@@ -355,6 +368,11 @@
     stopTouchAndScrollEventPropagation(wrapper);
 
     return wrapper;
+  }
+
+  function createVideoHotspotElement(hotspot){
+   let wrapper = document.createElement('div');
+    return wrapper
   }
 
   // Prevent touch and scroll events from reaching the parent element.
