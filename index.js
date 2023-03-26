@@ -102,13 +102,13 @@
 
     // Create video hotspots.
   //console.log(data.videoHotspots);
-  for (let i=0; i < data.videoHotspots.length; i++){
-    let videoHotspot = data.videoHotspots[i];
-    if (videoHotspot.yaw){
-      console.log(videoHotspot)
-      var element = createVideoHotspotElement(videoHotspot)
+  for (let i=0; i < data.iframeSpots.length; i++){
+    let iframeSpot = data.iframeSpots[i];
+    if (iframeSpot.yaw){
+      console.log(iframeSpot)
+      var element = createiframeSpotElement(iframeSpot)
       console.log(element)
-      scene.hotspotContainer().createHotspot(element, { yaw: videoHotspot.yaw, pitch: videoHotspot.pitch });
+      scene.hotspotContainer().createHotspot(element, { yaw: iframeSpot.yaw, pitch: iframeSpot.pitch });
     }
   };
 
@@ -370,8 +370,19 @@
     return wrapper;
   }
 
-  function createVideoHotspotElement(hotspot){
+  function createiframeSpotElement(hotspot){
+    // let videoInterviewWrapper = document.querySelector('#videointerview')
    let wrapper = document.createElement('div');
+    // let wrapper = document.getElementById('iframespot');
+
+    let iframeHotspot = document.createElement("div")
+    iframeHotspot.id = "iframespot"
+    iframeHotspot.appendChild(wrapper)
+    // iframeHotspot.appendChild(videoInterviewWrapper)
+    let previewMessage = document.createElement("div")
+    previewMessage.classList.add("message")
+    previewMessage.appendChild(iframeHotspot)
+    previewMessage.innerHTML = `${hotspot.message}`
     return wrapper
   }
 

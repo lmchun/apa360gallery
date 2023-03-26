@@ -74,8 +74,22 @@ var APP_DATA = {
           "text": "Text"
         }
       ],
-      "videoHotspots":[
-
+      "iframeSpots": [
+        {
+          "yaw": 0.0335,
+          "pitch": -0.102,
+          "title": "Organization Interviews", 
+          "message":"(These interviews tell the story of how each community was doing during the pandemic.)" 
+        }
+      ],
+      "iframeSelects":[
+        {
+          "yaw": 0.0335,
+          "pitch": -0.102,
+          "speakers":["Tavae Samuelu","Khalid Latif","Cathy Dang","Chanika Svetvilas","Alice Wong","Moumita Ahmed & Rima Begum", "Celina Su","Kabzuag Vaj", "Lisa Fu"],
+          "links":[""],
+          "speakerID":["TSamuelu","KLatif","CDang","CSvetvilas","AWong","MAhmed","CSu","JVaj","LFu"]
+        }
       ]
     },
     {
@@ -140,8 +154,14 @@ var APP_DATA = {
           "text": "Text"
         }
       ],
-      "videoHotspots":[
-        
+      "iframeSpots": [
+        {
+          
+        }
+      ],
+      "iframeSelects":[
+        {
+        }
       ]
     },
     {
@@ -206,8 +226,14 @@ var APP_DATA = {
           "text": "Text"
         }
       ],
-      "videoHotspots":[
-       { "yaw": -216}
+      "iframeSpots": [
+        {
+          
+        }
+      ],
+      "iframeSelects":[
+        {
+        }
       ]
     },
     {
@@ -260,8 +286,14 @@ var APP_DATA = {
           "text": "Text"
         }
       ],
-      "videoHotspots":[
-       { "yaw": -2.662238064569216}
+      "iframeSpots": [
+        {
+          
+        }
+      ],
+      "iframeSelects":[
+        {
+        }
       ]
     },
     {
@@ -326,18 +358,13 @@ var APP_DATA = {
           "text": "Text"
         }
       ],
-      "videoHotspots":[
+      "iframeSpots": [
         {
-          "yaw": 2.813297794778518,
-          "pitch": -0.009056237791217114,
-          "title": "AFUCKal",
-          "text": ["lots of text"]
-        },
+          
+        }
+      ],
+      "iframeSelects":[
         {
-          "yaw": 2,
-          "pitch": -0,
-          "title": "SOME RANDOM TITLE",
-          "text": ["lots of text"]
         }
       ]
     },
@@ -385,8 +412,14 @@ var APP_DATA = {
           "text": "Text"
         }
       ],
-      "videoHotspots":[
-       { "yaw": -2.662238064569216}
+      "iframeSpots": [
+        {
+          
+        }
+      ],
+      "iframeSelects":[
+        {
+        }
       ]
     }
   ],
