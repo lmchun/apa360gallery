@@ -116,20 +116,23 @@
 
     let iframeSelect = data.iframeSelects[i];
     if (iframeSelect.yaw){
-      console.log(iframeSelect)
+      // console.log(iframeSelect)
       var element = createiFrameSelectElement(iframeSelect)
-      console.log(element)
+      // console.log(element)
       scene.hotspotContainer().createHotspot(element, 
         { yaw: iframeSelect.yaw, pitch: iframeSelect.pitch } 
         );
     }
     // add the iframeSelects
-    // data.iframeSelects.forEach(function(hotspot){
-
-
-    // })
 
   };
+
+  // create the iFrame Selectors
+    data.iframeSelects.forEach(function(obj){
+      //console.log(dict);
+      let output_list = createIframeSelects(obj);
+      console.log(output_list);
+    })
 
 
     return {
@@ -404,20 +407,74 @@
     iframeHotspot.appendChild(previewMessage)
     return iframeHotspot
   }
+  let  hotspotHtml = {};
 
   function createiFrameSelectElement(hotspot){
     // Create the iFrameSelect Element
     let iFrameSelectWrapper = document.createElement("ul")
     iFrameSelectWrapper.id = "iframeselect"
-    console.log(hotspot)
+    // console.log(hotspot)
     for (var i = 0; i < hotspot.speakers.length; i++) {
       let iFrameOptions = document.createElement("li")
       iFrameOptions.setAttribute('data-source', hotspot.speakerID[i])
       iFrameOptions.innerHTML = `${hotspot.speakers[i]}`
       iFrameSelectWrapper.appendChild(iFrameOptions)
-    }
+    }   
     return iFrameSelectWrapper
   }
+  
+  function createIframeSelects(obj){
+    let my_output = [];
+    if (obj.maps){
+      for (let i=0; i < obj.maps.length; i++){
+        // loop through each element in iFrameSelects array
+        let iFrameDict = obj.maps[i];
+        //console.log(iFrameDict);
+        my_output.push(iFrameDict);
+        /*
+        for (let j=0; j<speakerArr.length; j++){
+          let myID = speakerArr[j];
+          console.log(myID);
+        }
+        */
+      }
+      return my_output
+    }
+  }
+  /*
+  for  (let s = 0; s<data.scenes.length; s++){
+    for (let i = 0; i < data.scenes[s].speakers.length; i++) {
+    let hotspotHtmlPairs = "";
+    // for (let k = 0; k < data.scenes[s][i].name.length; k++) {
+      // hotspotHtmlPairs += data.scenes[s][i].name[k] + " ";
+    // }
+      //   hotspotHtml[`speakerID${i}`] = `<iframe id="youtube" width="1280" height="480" src="${hotspot.links[i]}" frameborder="0" allowfullscreen></iframe>`;
+    }
+
+  }
+*/    
+    // console.log(hotspotHtml)   
+ 
+
+       // Switch sources when clicked.
+       function switchHotspot(id) {
+        var wrapper = document.getElementById('iframespot');
+        wrapper.innerHTML = hotspotHtml[id];
+      }
+   
+
+    var switchElements = document.querySelectorAll('[data-source]');
+    for (var i = 0; i < switchElements.length; i++) {
+      var element = switchElements[i];
+      addClickEvent(element);
+    }
+
+    function addClickEvent(element) {
+      element.addEventListener('click', function() {
+        switchHotspot(element.getAttribute('data-source'));
+      });
+    }
+
 
   // Prevent touch and scroll events from reaching the parent element.
   function stopTouchAndScrollEventPropagation(element, eventList) {

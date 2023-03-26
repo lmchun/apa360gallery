@@ -87,8 +87,20 @@ var APP_DATA = {
           "yaw": 0.0335,
           "pitch": -0.102,
           "speakers":["Tavae Samuelu","Khalid Latif","Cathy Dang","Chanika Svetvilas","Alice Wong","Moumita Ahmed & Rima Begum", "Celina Su","Kabzuag Vaj", "Lisa Fu"],
-          "links":[""],
-          "speakerID":["TSamuelu","KLatif","CDang","CSvetvilas","AWong","MAhmed","CSu","JVaj","LFu"]
+          "links":["https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8","https://www.youtube.com/embed/M2_qlvbfwL8",],
+          "speakerID":["TSamuelu","KLatif","CDang","CSvetvilas","AWong","MAhmed","CSu","JVaj","LFu"],
+          "maps": [
+            {"speaker_id": "TSamuelu",
+            "name": "TavaeSamuelu",
+            "link_attributes": {
+              "height": "720",
+              "width": "1280",
+              "src": "https://www.youtube.com/embed/gaA7RAy5rYg",
+              "title": "Youtube video player",
+              "frameborder": "0"
+            }
+          }
+          ]
         }
       ]
     },
