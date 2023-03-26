@@ -108,8 +108,18 @@
       console.log(iframeSpot)
       var element = createiframeSpotElement(iframeSpot)
       console.log(element)
-      scene.hotspotContainer().createHotspot(element, { yaw: iframeSpot.yaw, pitch: iframeSpot.pitch });
+      scene.hotspotContainer().createHotspot(element, 
+        { yaw: iframeSpot.yaw, pitch: iframeSpot.pitch },  
+        { perspective: { radius: 1640, extraTransforms: "rotateX(5deg)" }}
+        );
     }
+
+    // add the iframeSelects
+    data.iframeSelects.forEach(function(hotspot){
+
+
+    })
+
   };
 
 
@@ -371,19 +381,27 @@
   }
 
   function createiframeSpotElement(hotspot){
-    // let videoInterviewWrapper = document.querySelector('#videointerview')
-   let wrapper = document.createElement('div');
-    // let wrapper = document.getElementById('iframespot');
-
+    // create video Interview Wrapper
+    // iFrameHotspot, and the preview message
+    let videoInterviewWrapper = document.querySelector('#videointerview')
     let iframeHotspot = document.createElement("div")
     iframeHotspot.id = "iframespot"
-    iframeHotspot.appendChild(wrapper)
-    // iframeHotspot.appendChild(videoInterviewWrapper)
     let previewMessage = document.createElement("div")
     previewMessage.classList.add("message")
-    previewMessage.appendChild(iframeHotspot)
     previewMessage.innerHTML = `${hotspot.message}`
-    return wrapper
+
+    // Append child
+    videoInterviewWrapper.appendChild(iframeHotspot)
+    iframeHotspot.appendChild(previewMessage)
+    return iframeHotspot
+  }
+
+  function createiFrameSelectElement(hotspot){
+    // Create the iFrameSelect Element
+    let iFrameSelectWrapper = document.createElement("div")
+    iFrameSelectWrapper.id = "iframeselect"
+
+    return iFrameSelectWrapper
   }
 
   // Prevent touch and scroll events from reaching the parent element.
