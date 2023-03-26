@@ -105,20 +105,29 @@
   for (let i=0; i < data.iframeSpots.length; i++){
     let iframeSpot = data.iframeSpots[i];
     if (iframeSpot.yaw){
-      console.log(iframeSpot)
+      // console.log(iframeSpot)
       var element = createiframeSpotElement(iframeSpot)
-      console.log(element)
+      // console.log(element)
       scene.hotspotContainer().createHotspot(element, 
         { yaw: iframeSpot.yaw, pitch: iframeSpot.pitch },  
         { perspective: { radius: 1640, extraTransforms: "rotateX(5deg)" }}
         );
     }
 
+    let iframeSelect = data.iframeSelects[i];
+    if (iframeSelect.yaw){
+      console.log(iframeSelect)
+      var element = createiFrameSelectElement(iframeSelect)
+      console.log(element)
+      scene.hotspotContainer().createHotspot(element, 
+        { yaw: iframeSelect.yaw, pitch: iframeSelect.pitch } 
+        );
+    }
     // add the iframeSelects
-    data.iframeSelects.forEach(function(hotspot){
+    // data.iframeSelects.forEach(function(hotspot){
 
 
-    })
+    // })
 
   };
 
@@ -398,9 +407,15 @@
 
   function createiFrameSelectElement(hotspot){
     // Create the iFrameSelect Element
-    let iFrameSelectWrapper = document.createElement("div")
+    let iFrameSelectWrapper = document.createElement("ul")
     iFrameSelectWrapper.id = "iframeselect"
-
+    console.log(hotspot)
+    for (var i = 0; i < hotspot.speakers.length; i++) {
+      let iFrameOptions = document.createElement("li")
+      iFrameOptions.setAttribute('data-source', hotspot.speakerID[i])
+      iFrameOptions.innerHTML = `${hotspot.speakers[i]}`
+      iFrameSelectWrapper.appendChild(iFrameOptions)
+    }
     return iFrameSelectWrapper
   }
 
