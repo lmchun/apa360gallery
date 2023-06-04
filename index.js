@@ -392,6 +392,8 @@
     return wrapper;
   }
 
+  function somethung somerhung
+  
   function createiframeSpotElement(hotspot){
     // create video Interview Wrapper
     // iFrameHotspot, and the preview message
